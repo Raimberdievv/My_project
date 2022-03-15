@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from apps.home.models import Home, Service, Price, Partners, Team, FAQ
+from apps.home.forms import ContactForm
 
 # Create your views here.
 def index(request):
@@ -24,9 +25,13 @@ def service(request):
     context = {
         'homes' : home,
     }
-    return render(request,'services.html')
+    return render(request,'services.html',context)
     
-
-def contact(request):
-    return render(request,'contact-us.html')    
+def contact_us(request):
+    context={}
+    form = ContactForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    context['form']= form    
+    return render(request,'contact-us.html', context)    
     
