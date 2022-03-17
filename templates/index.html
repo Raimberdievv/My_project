@@ -171,7 +171,7 @@
                             <a href="#" class="nav-link dropdown-toggle">Страницы</a>
                             <ul class="dropdown-menu">
                                 <li class="nav-item">
-                                    <a href="about-us.html" class="nav-link">О нас</a>
+                                    <a href="{% url 'about_us' %}" class="nav-link">О нас</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="faqs.html" class="nav-link">Часто задаваемые вопросы</a>
@@ -301,7 +301,9 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="contact-us.html" class="nav-link">Связаться с нами</a>
+                            <a href="{% url 'contact_us' %}" class="nav-link">Связаться с нами</a>
+                            <li class="nav-item">
+                                <a href="{% url 'support' %}" class="nav-link">Чат</a>
                         </li>
                     </ul>
                 </div>
@@ -847,7 +849,7 @@
                                         <h3>Поддержка и помощь</h3>
                                     </div>
                                     <ul class="footer-details footer-list">
-                                        <li><a href="about-us.html">О нас</a></li>
+                                        <li><a href="about_us">О нас</a></li>
                                         <li><a href="contact-us.html">Связаться с нами</a></li>
                                         <li><a href="pricing.html">Цены</a></li>
                                         <li><a href="blogs-list-with-sidebar.html">Блоги</a></li>

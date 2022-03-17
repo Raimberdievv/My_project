@@ -1,0 +1,21 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block content %}
+{% include 'include/header.html' %}
+<div class="quality-section pb-70">
+    <div class="container">
+        <div class="row">
+            {% for contact in contacts %}
+            <div class="col-12 col-md-6 col-lg-4 pb-30">
+                <div class="quality-card quality-card-blue">
+                    <div class="quality-card-icon">
+                        <i class="flaticon-chat"></i>
+                    </div>
+                    <div class="quality-card-content">
+                        <h6>{{ contact.name }}</h6>
+                        <p>{{ contact.message }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+{% endblock %}            

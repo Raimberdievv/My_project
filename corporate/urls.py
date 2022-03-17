@@ -17,15 +17,19 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from apps.home.views import index, service, contact_us 
+from apps.home.views import index, service, contact_us ,thank_you,support,about_us,service_detail
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name = "index"),
-    path('service/',service,name="service"),
+    path('services/',service,name="service"),   
+    path('about_us/',about_us,name="about_us"),  
+    path('support/',support,name="support"),
+    path('service-details/<int:id>', service_detail, name = "service_details"),
+    path('thank_you/',thank_you,name="thank_you"),
     path('contact-us/',contact_us,name="contact_us"),
-    path('ckeditor/', include,'ckeditor_uploader.urls'),
+    path('ckeditor/', include,('ckeditor_uploader.urls')),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
